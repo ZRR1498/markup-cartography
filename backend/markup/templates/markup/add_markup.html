@@ -1,0 +1,22 @@
+{% extends 'markup/base.html' %}
+
+{% block content %}
+
+<div class="put-markup" align="center">
+<form method="post">
+  <h1 align="center">{{title}}</h1>
+  {% csrf_token %}
+
+  <div class="form-error">{{form.non_field_errors}}</div>
+
+  {% for f in form %}
+  <p><label class="form-label" for="{{f.id_for_label}}">{{f.label}}:  </label>{{f}}</p>
+  <div class="form-error">{{f.errors}}</div>
+  {% endfor %}
+
+  <button class="custom-button" type="submit">Произвести разметку</button>
+
+</form>
+</div>
+
+{% endblock %}
