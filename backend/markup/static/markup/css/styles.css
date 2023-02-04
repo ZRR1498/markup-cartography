@@ -457,9 +457,6 @@ ul.lang-list li a:hover {color: #fdc073;}
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	margin-left: 40%;
     margin-right: 45%;
-
-
-
 }
 
 
@@ -486,6 +483,41 @@ ul.lang-list li a:hover {color: #fdc073;}
   	border: 1px solid;
 	position: absolute;/* or absolute */
 	font-family: "Trebuchet MS", Verdana, sans-serif;
-	margin-left: 0%;
+	margin-left: 30%;
     margin-right: 0%;
+}
+
+.mini-map {
+	background: black; /* Цвет фона */
+    color: black; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+    border-radius: 5px; /* Уголки */
+	display: inline-flex;
+  	border: 1px solid;
+
+	/*position: absolute;*/
+
+
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	margin-left: 70%;
+    margin-right: 95%;
+}
+
+.home {
+	background: white; /* Цвет фона */
+    color: black; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+    border-radius: 5px; /* Уголки */
+	display: inline-block;
+  	border: 1px solid;
+	position: center; /* or absolute */
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	margin-left: 40%;
+    margin-right: 45%;
+}
+
+
+.home-contact {
+
+	top: -50px;
 }
