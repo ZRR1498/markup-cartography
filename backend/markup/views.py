@@ -1,7 +1,5 @@
 from django.contrib.auth import logout, login
-from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -9,7 +7,7 @@ from django.views.generic import ListView, DetailView, CreateView, FormView
 
 from .forms import *
 from .utils import DataMixin
-from .services import get_coord
+from .services import output
 
 
 class Home(DataMixin, ListView):
@@ -32,8 +30,46 @@ class GetMarkUp(DataMixin, FormView):
         return dict(list(context.items()) + list(c_def.items()))
 
     def form_valid(self, form):
-        print(get_coord(form.cleaned_data['number']))
-        return redirect('home')
+        check_map = output(form.cleaned_data['number'])
+        if check_map is False:
+            return redirect('add_markup')
+        return redirect('look_map')
+
+
+class LookMap(DataMixin, FormView):
+    form_class = PushNumber
+    template_name = 'markup/look_map.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Разметка объекта на карте", map='map_folium.html')
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def form_valid(self, form):
+        check_map = output(form.cleaned_data['number'])
+        if check_map is False:
+            return redirect('add_markup')
+        return redirect('look_map')
+
+
+class Map(DataMixin, FormView):
+    form_class = PushNumber
+    template_name = 'markup/map_folium.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Разметка объекта на карте")
+        return dict(list(context.items()) + list(c_def.items()))
+
+
+class StartMap(DataMixin, FormView):
+    form_class = PushNumber
+    template_name = 'markup/map_start.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Глобальная карта")
+        return dict(list(context.items()) + list(c_def.items()))
 
 
 class HistoryMarkUp(DataMixin, ListView):
@@ -42,7 +78,7 @@ class HistoryMarkUp(DataMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="История разметки")
+        c_def = self.get_user_context(title="История разметок")
         return dict(list(context.items()) + list(c_def.items()))
 
 
@@ -79,3 +115,13 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect('login')
+
+
+class Contact(DataMixin, ListView):
+    model = User
+    template_name = 'markup/contact.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Контакты")
+        return dict(list(context.items()) + list(c_def.items()))

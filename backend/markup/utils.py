@@ -2,6 +2,7 @@
 menu = [{'title': "Главная страница", 'url_name': 'home'},
         {'title': "Добавить разметку", 'url_name': 'add_markup'},
         {'title': "История разметок", 'url_name': 'history'},
+        {'title': "Контакты для связи", 'url_name': 'contact'},
         ]
 
 
