@@ -355,7 +355,6 @@ ul.lang-list li a:hover {color: #fdc073;}
 
 #footer {
 	box-sizing: border-box;
-
 	background: black;
 	padding: 5px;
 	color: white;
@@ -437,7 +436,7 @@ ul.lang-list li a:hover {color: #fdc073;}
     border-radius: 5px; /* Уголки */
 	display: inline-flex;
   	border: 1px solid;
-	position: center; /* or absolute */
+	position: absolute; /* or absolute */
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	margin-left: 40%;
     margin-right: 45%;
@@ -453,7 +452,7 @@ ul.lang-list li a:hover {color: #fdc073;}
     border-radius: 5px; /* Уголки */
 	display: inline-block;
   	border: 1px solid;
-	position: center; /* or absolute */
+	position: absolute; /* or absolute */
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	margin-left: 40%;
     margin-right: 45%;
@@ -483,41 +482,48 @@ ul.lang-list li a:hover {color: #fdc073;}
   	border: 1px solid;
 	position: absolute;/* or absolute */
 	font-family: "Trebuchet MS", Verdana, sans-serif;
-	margin-left: 30%;
+	margin-left: 0%;
     margin-right: 0%;
 }
 
 .mini-map {
 	background: black; /* Цвет фона */
     color: black; /* Цвет текста */
-    padding: 10px; /* Поля вокруг текста */
-    border-radius: 5px; /* Уголки */
-	display: inline-flex;
-  	border: 1px solid;
+    padding: 2px; /* Поля вокруг текста */
+    border-radius: 2px; /* Уголки */
+	display: inline-block;
+  	border: 2px solid;
 
-	/*position: absolute;*/
+	position: absolute;
 
 
 	font-family: "Trebuchet MS", Verdana, sans-serif;
-	margin-left: 70%;
-    margin-right: 95%;
+	margin-left: 24%;
+    margin-right: 10%;
 }
 
 .home {
-	background: white; /* Цвет фона */
+	background: #d0d0d0; /* Цвет фона */
     color: black; /* Цвет текста */
     padding: 10px; /* Поля вокруг текста */
     border-radius: 5px; /* Уголки */
 	display: inline-block;
   	border: 1px solid;
-	position: center; /* or absolute */
+	/*position: center; !* or absolute *!*/
 	font-family: "Trebuchet MS", Verdana, sans-serif;
-	margin-left: 40%;
-    margin-right: 45%;
+	/*margin-left: 40%;*/
+    /*margin-right: 45%;*/
 }
 
 
 .home-contact {
-
-	top: -50px;
+	background: #d0d0d0; /* Цвет фона */
+    color: black; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+    border-radius: 5px; /* Уголки */
+	display: inline-block;
+  	border: 1px solid;
+	/*position: center; !* or absolute *!*/
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	top: -500px;
 }
