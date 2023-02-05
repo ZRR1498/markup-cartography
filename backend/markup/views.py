@@ -42,7 +42,7 @@ class LookMap(DataMixin, FormView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="Разметка объекта на карте", map='map_folium.html')
+        c_def = self.get_user_context(title="Разметка объекта", map='map_folium.html')
         return dict(list(context.items()) + list(c_def.items()))
 
     def form_valid(self, form):
@@ -58,7 +58,7 @@ class Map(DataMixin, FormView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="Разметка объекта на карте")
+        c_def = self.get_user_context(title="Разметка объекта")
         return dict(list(context.items()) + list(c_def.items()))
 
 

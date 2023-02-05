@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<div class="put-markup" align="center">
+
+<div class="put-markup" align="left">
 <form method="post">
   <h1 align="center">{{title}}</h1>
   {% csrf_token %}
@@ -20,7 +21,8 @@
 </div>
 
 <div class="mini-map" align="right">
-    <iframe class="mini-map-frame" src="map_folium" title="Basic map with folium" width="1400" height="700"></iframe>
+    <iframe class="mini-map-frame" src="map_folium" title="Basic map with folium" width="1400" height="650"></iframe>
 </div>
+
 
 {% endblock %}
