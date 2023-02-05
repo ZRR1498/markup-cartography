@@ -1,3 +1,5 @@
+from copy import copy
+
 from rosreestr2coord import Area
 import json
 import folium
@@ -17,13 +19,10 @@ def get_coord(number_string):
     if isinstance(row_data, (str, bytes, bytearray)):
         data = json.loads(row_data)
 
-        print(data)
-
         coords = []
         for elem in data['features']:
             coord = elem['geometry']
             coords.append(coord['coordinates'])
-        print(coords)
 
         return coords
     return False

@@ -436,7 +436,7 @@ ul.lang-list li a:hover {color: #fdc073;}
     border-radius: 5px; /* Уголки */
 	display: inline-flex;
   	border: 1px solid;
-	/*position: center; !* or absolute *!*/
+	position: absolute; /* or absolute */
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	margin-left: 40%;
     margin-right: 45%;
@@ -452,7 +452,7 @@ ul.lang-list li a:hover {color: #fdc073;}
     border-radius: 5px; /* Уголки */
 	display: inline-block;
   	border: 1px solid;
-	/*position: center; !* or absolute *!*/
+	position: absolute; /* or absolute */
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	margin-left: 40%;
     margin-right: 45%;
